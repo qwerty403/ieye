@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Search results</title>
+<style>
+body
+{
+   background-color: #FFFFFF;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 13px;
+   margin: 0;
+   padding: 2px 2px 2px 2px;
+}
+a
+{
+   color: #0000FF;
+   text-decoration: none;
+}
+a:hover
+{
+   color: #0000FF;
+   text-decoration: underline;
+}
+input:focus, textarea:focus, select:focus
+{
+   outline: none;
+}
+</style>
+<script src="jquery-1.12.4.min.js"></script>
+<style>
+#SiteSearch1
+{
+   display: none;
+}
+.search-item, .search-text
+{
+   color:#000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 13px;
+   padding: 0;
+}
+.search-text
+{
+   margin: 0 0 0px 0;
+}
+.search-title, .search-title:active, .search-title:hover, .search-title:visited
+{
+   color:#0000FF;
+}
+.search-url, .search-url:active, .search-url:hover, .search-url:visited
+{
+   color:#006621;
+   text-decoration: none;
+}
+.search-highlight
+{
+   font-weight: bold;
+   font-style: normal;
+}
+</style>
+<script src="searchindex.js"></script>
+<script src="wb.sitesearch.min.js"></script>
+<script>
+var features = '';
+function searchPage(features)
+{
+   searchResults('SiteSearch1', 'search-results', 250, 0, false, true, false, false, '_parent', 'No results', ' result(s) found for search term: ', 'seconds');
+   return false;
+}
+$(document).ready(function()
+{
+   searchParseURL('SiteSearch1');
+});
+</script>
+
+</head>
+<body>
+<input id="SiteSearch1" name="search-input">
+<div id="search-results"></div>
+</body>
+</html>
